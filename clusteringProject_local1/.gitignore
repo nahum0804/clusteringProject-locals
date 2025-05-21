@@ -1,0 +1,11 @@
+venv/
+pycache/
+*.pyc
+*.pyo
+*.log
+*.sqlite3
+.vscode/
+.idea/
+*.egg-info/
+dist/
+build/
