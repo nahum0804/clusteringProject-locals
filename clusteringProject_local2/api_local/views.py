@@ -6,7 +6,8 @@ from .models import (
     Vehiculo,
     ControlEnvio,
     Ruta,
-    DetalleRuta
+    DetalleRuta,
+    Nodo,
 )
 from .serializers import (
     ClienteSerializer,
@@ -44,4 +45,8 @@ class RutaViewSet(viewsets.ModelViewSet):
 
 class DetalleRutaViewSet(viewsets.ModelViewSet):
     queryset = DetalleRuta.objects.all()
+    serializer_class = DetalleRutaSerializer
+
+class NodoViewSet(viewsets.ModelViewSet):
+    queryset = Nodo.objects.all()
     serializer_class = DetalleRutaSerializer

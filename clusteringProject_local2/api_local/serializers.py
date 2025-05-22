@@ -6,7 +6,8 @@ from .models import (
     Vehiculo,
     ControlEnvio,
     Ruta,
-    DetalleRuta
+    DetalleRuta,
+    Nodo,
 )
 
 class ClienteSerializer(serializers.ModelSerializer):
@@ -24,6 +25,11 @@ class HistorialPagoSerializer(serializers.ModelSerializer):
         model = HistorialPago
         fields = '__all__'
 
+class NodoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Nodo
+        fields = '__all__'
+        
 class VehiculoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vehiculo

@@ -24,7 +24,8 @@ from api_local.views import (
     VehiculoViewSet,
     ControlEnvioViewSet,
     RutaViewSet,
-    DetalleRutaViewSet
+    DetalleRutaViewSet,
+    NodoViewSet,
 )
 
 router = DefaultRouter()
@@ -35,6 +36,8 @@ router.register(r'vehiculos', VehiculoViewSet)
 router.register(r'control_envios', ControlEnvioViewSet)
 router.register(r'rutas', RutaViewSet)
 router.register(r'detalle_rutas', DetalleRutaViewSet)
+router.register(r'nodos', NodoViewSet)
+
 
 urlpatterns = [
 path('admin/', admin.site.urls),

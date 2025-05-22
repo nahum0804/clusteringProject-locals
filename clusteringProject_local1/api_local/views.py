@@ -6,7 +6,8 @@ from .models import (
     Vehiculo,
     ControlEnvio,
     Ruta,
-    DetalleRuta
+    DetalleRuta,
+    Nodo,
 )
 from .serializers import (
     ClienteSerializer,
@@ -15,7 +16,8 @@ from .serializers import (
     VehiculoSerializer,
     ControlEnvioSerializer,
     RutaSerializer,
-    DetalleRutaSerializer
+    DetalleRutaSerializer,
+    NodoSerializer,
 )
 
 class ClienteViewSet(viewsets.ModelViewSet):
@@ -29,6 +31,10 @@ class HistorialEnvioViewSet(viewsets.ModelViewSet):
 class HistorialPagoViewSet(viewsets.ModelViewSet):
     queryset = HistorialPago.objects.all()
     serializer_class = HistorialPagoSerializer
+
+class NodoViewSet(viewsets.ModelViewSet):
+    queryset = Nodo.objects.all()
+    serializer_class = NodoSerializer
 
 class VehiculoViewSet(viewsets.ModelViewSet):
     queryset = Vehiculo.objects.all()
