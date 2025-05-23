@@ -43,6 +43,8 @@ class ControlEnvio(models.Model):
     fecha_registro = models.DateTimeField(auto_now_add=True)
     estado = models.CharField(max_length=20, default="pendiente")
     qr_generado = models.TextField()
+    recibido_por = models.CharField(max_length=100, null=True, blank=True)
+    fecha_envio = models.DateTimeField(null=True, blank=True)
 
 class Ruta(models.Model):
     id_ruta = models.AutoField(primary_key=True)
@@ -55,3 +57,5 @@ class DetalleRuta(models.Model):
     ruta = models.ForeignKey(Ruta, on_delete=models.CASCADE)
     paquete = models.ForeignKey(ControlEnvio, on_delete=models.CASCADE)
     entregado = models.BooleanField(default=False)
+    motivo_fallo = models.TextField(null=True, blank=True)
+    fecha_entrega = models.DateTimeField(null=True, blank=True)
