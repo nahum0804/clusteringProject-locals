@@ -27,6 +27,7 @@ from api_local.views import (
     DetalleRutaViewSet,
     NodoViewSet,
     SincronizarEstadoView,
+    SincronizarDatosView,
 )
 
 router = DefaultRouter()
@@ -44,4 +45,5 @@ urlpatterns = [
 path('admin/', admin.site.urls),
 path('api/', include(router.urls)),
 path('api/sincronizar_estado/', SincronizarEstadoView.as_view()),
+path('api/sincronizar_datos/', SincronizarDatosView.as_view())
 ]
